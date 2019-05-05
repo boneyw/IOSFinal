@@ -13,11 +13,12 @@ class photoSelection: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var Camera: UIButton!
     @IBOutlet weak var PhotoLibrary: UIButton!
     @IBOutlet weak var ImageDisplay: UIImageView!
+    @IBOutlet weak var Next: UIButton!
     
     var imageName: UIImageView!
     let imagePicker = UIImagePickerController()
     
-    
+    // MOve to the next screen to setup picture
      func prepareForSegue(segue: UIStoryboardSegue, sender: Any?) {
         
         let vc = segue.destination as! ViewController
@@ -32,7 +33,7 @@ class photoSelection: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         // Do any additional setup after loading the view.
     }
-    
+    // Open the camera on the phone
     @IBAction func CameraAction(_ sender: UIButton) {
         
         let picker = UIImagePickerController()
@@ -43,7 +44,7 @@ class photoSelection: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(picker, animated: true, completion: nil)
         
     }
-    
+    // Opening the photo library to llok at the picture you have
     @IBAction func PhotoLibraryAction(_ sender: UIButton) {
         
         imagePicker.sourceType = .photoLibrary
@@ -62,8 +63,9 @@ class photoSelection: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     */
 
+    
 }
-
+// how to choose what in the library 
 extension photoSelection {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{

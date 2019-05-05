@@ -122,11 +122,12 @@ class DetailViewController: UIViewController {
         simplePosition(secondPos)
     })
   }
-  
+  //Rotation of the picture not the square
   fileprivate func rotateView(_ angel: Double) {
     UIView.animate(withDuration: duration, delay: delay, options: [.repeat], animations: {
-      self.rightTarget.transform = CGAffineTransform(rotationAngle: CGFloat(angel))
-      }, completion: nil)
+        self.rightTarget.transform = CGAffineTransform(rotationAngle: 360)})
+      //self.rightTarget.transform = CGAffineTransform(rotationAngle: CGFloat(angel))
+       //completion:)
   }
   
   fileprivate func colorFrameChange(_ firstFrame: CGRect, _ secondFrame: CGRect, _ thirdFrame: CGRect,
@@ -190,4 +191,15 @@ class DetailViewController: UIViewController {
         })
     })
   }
+    
+    // Saving the picture
+    @IBAction func savePhoto(_ sender: Any) {
+        let imageDate = rightTarget.image!.pngData()
+        let compressedImage = UIImage(data: imageDate!)
+        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        let alert = UIAlertController (title: "Saved", message: "Your image has been saved", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

@@ -85,14 +85,23 @@
                                     <action selector="didTapAnimate:" destination="Bp6-wf-0l7" eventType="touchUpInside" id="eSc-id-mWx"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="gEN-Zl-jz3">
-                                <rect key="frame" x="67" y="72" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGx-MJ-PUq">
+                                <rect key="frame" x="170.5" y="593" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="Bp6-wf-0l7" eventType="touchUpInside" id="sBV-Iw-7wD"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="gEN-Zl-jz3">
+                                <rect key="frame" x="83" y="64" width="209" height="114"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q6b-9x-XEb" firstAttribute="centerX" secondItem="guP-Ad-Liv" secondAttribute="centerX" priority="500" id="IlJ-Ty-MUc"/>
+                            <constraint firstItem="vGx-MJ-PUq" firstAttribute="top" secondItem="q6b-9x-XEb" secondAttribute="bottom" constant="8" symbolic="YES" id="KNf-hX-NzW"/>
+                            <constraint firstItem="vGx-MJ-PUq" firstAttribute="centerX" secondItem="guP-Ad-Liv" secondAttribute="centerX" id="LAD-f4-Fih"/>
+                            <constraint firstItem="vGx-MJ-PUq" firstAttribute="centerX" secondItem="gEN-Zl-jz3" secondAttribute="centerX" id="np8-50-f6s"/>
                             <constraint firstItem="GTa-EL-jWB" firstAttribute="top" secondItem="q6b-9x-XEb" secondAttribute="bottom" constant="82" id="oX1-Ph-CFA"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
@@ -104,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BY-bf-O4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="323"/>
+            <point key="canvasLocation" x="2605.5999999999999" y="322.48875562218893"/>
         </scene>
         <!--Photo Selection-->
         <scene sceneID="dlL-Oq-zsS">
@@ -140,10 +149,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="c4w-7h-7El"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="nestSlide:" destination="51a-To-h1U" eventType="touchUpInside" id="MFr-VH-87L"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toSelect" id="rnV-AZ-IEf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="0YC-Z6-y48"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,6 +174,7 @@
                     <connections>
                         <outlet property="Camera" destination="lAf-fz-6pm" id="hu8-Xg-SlM"/>
                         <outlet property="ImageDisplay" destination="WlL-Aw-sGu" id="dsH-MP-u60"/>
+                        <outlet property="Next" destination="CfN-7V-9Pj" id="epj-oe-1DI"/>
                         <outlet property="PhotoLibrary" destination="yF0-GV-B4q" id="RKw-QM-eoS"/>
                     </connections>
                 </viewController>
